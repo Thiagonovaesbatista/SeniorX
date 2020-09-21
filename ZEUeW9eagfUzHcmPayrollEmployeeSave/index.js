@@ -6,6 +6,13 @@
  * Nome do tenant : trn36294296
  **/
 
+ /**
+  * Desafios propostos no primeiro dia de treinamento
+  * 1- Validar cadastro do colaborador – 
+  * Quando for deficiente o campo “preenche cota” deve obrigatoriamente ser informado com “Sim”.​
+  * 2- Na regra de programação de desligamento criada. Deixar programar desligamento para um colaborador com “Cargo de Confiança” se o usuário estiver no grupo “admin”.​
+  */
+
 const axios = require('axios');
 
 exports.handler = async event => {
@@ -27,6 +34,10 @@ exports.handler = async event => {
         }
     } else {
         return sendRes(400,'O apelido deve ser informado!');
+    }
+    /* Desafio 1 - Valida se é deficiente se for exige preenchimento da cota */
+    if((body.sheetPersona.isDisability) && (!body.sheetPersona.isOccupantQuota)){
+        return sendRes(400,'Informe se preenche cota');
     }
 
     /* Valida se a foto do colaborador está presente */

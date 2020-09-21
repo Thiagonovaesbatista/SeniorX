@@ -1,0 +1,10 @@
+{
+    "DeploymentMethod": "lambda",
+    "Functions": {
+        "ZEUeW9eagfUzHcmPayrollEmployeeSave": {
+            "PhysicalId": {
+                "us-east-1": "ZEUeW9eagfUzHcmPayrollEmployeeSave"
+            }
+        }
+    }
+}
